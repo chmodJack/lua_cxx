@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <unistd.h>
 using namespace std;
 
 extern "C"
@@ -108,6 +109,13 @@ int main(int argc,char* argv[])
 	{
 		double fValue = lua_tonumber(L, -1);
 		cout << "Result is " << fValue << endl;
+	}
+
+	while(1)
+	{
+		lua_getglobal(L,"all");
+		lua_pcall(L,0,0,0);
+		sleep(1);
 	}
 
 	//至此，栈中的情况是：

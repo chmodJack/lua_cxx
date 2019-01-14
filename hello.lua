@@ -11,3 +11,7 @@ print("avg: ",avg)
 print("sum: ",sum)
 
 cxx_print_num(avg,sum)
+
+function all()
+	cxx_print_num(avg+1,sum+1)
+end
